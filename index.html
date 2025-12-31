@@ -1,25 +1,72 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>🎉 Happy New Year 🎉</title>
-  <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<title>Happy New Year</title>
+
+<style>
+body {
+  background: linear-gradient(to right, #ff512f, #dd2476);
+  font-family: Arial, sans-serif;
+  text-align: center;
+  height: 100vh;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card {
+  background: white;
+  padding: 30px;
+  border-radius: 15px;
+  width: 90%;
+  max-width: 400px;
+}
+
+input {
+  width: 90%;
+  padding: 10px;
+  margin: 15px 0;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+button {
+  background: #25D366;
+  color: white;
+  border: none;
+  padding: 12px;
+  font-size: 16px;
+  border-radius: 5px;
+}
+</style>
 </head>
+
 <body>
 
-  <div class="card">
-    <h1>🎆 Happy New Year 🎆</h1>
-    <p>Andika jina lako hapa 👇</p>
+<div class="card">
+  <h1>🎉 Happy New Year 🎉</h1>
+  <p>Andika jina lako hapa 👇</p>
 
-    <input type="text" id="username" placeholder="Jina lako">
-    <button onclick="share()">Share WhatsApp</button>
-  </div>
+  <input type="text" id="username" placeholder="Jina lako">
+  <br>
+  <button onclick="share()">Share WhatsApp</button>
+</div>
 
-  <audio autoplay loop>
-    <source src="music.mp3" type="audio/mpeg">
-  </audio>
+<script>
+function share() {
+  let name = document.getElementById("username").value;
+  if (name === "") {
+    alert("Andika jina kwanza 😊");
+    return;
+  }
 
-  <script src="script.js"></script>
+  let msg = "🎉 Happy New Year " + name + "! 🎆";
+  let url = "https://wa.me/?text=" + encodeURIComponent(msg);
+  window.open(url, "_blank");
+}
+</script>
+
 </body>
 </html>
