@@ -1,98 +1,46 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>🎉 Happy New Year 🎉</title>
+<title>Happy New Year - Machage Family</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body {
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(to right, #ff512f, #dd2476);
+  color: white;
+  text-align: center;
+  font-family: 'Arial', sans-serif;
+}
 
-  <!-- Inline CSS -->
-  <style>
-    body {
-      background: linear-gradient(to right, #ff512f, #dd2476);
-      font-family: Arial, sans-serif;
-      text-align: center;
-      height: 100vh;
-      margin: 0;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
+h1 {
+  font-size: 40px;
+  margin-top: 60px;
+  animation: glow 2s infinite;
+}
 
-    .card {
-      background: white;
-      padding: 30px;
-      border-radius: 15px;
-      width: 90%;
-      max-width: 400px;
-      box-shadow: 0 0 20px rgba(0,0,0,0.3);
-      animation: pop 1s ease;
-    }
+h2 {
+  margin-top: 20px;
+  font-size: 26px;
+}
 
-    @keyframes pop {
-      from { transform: scale(0.5); opacity: 0; }
-      to { transform: scale(1); opacity: 1; }
-    }
-
-    input {
-      width: 90%;
-      padding: 10px;
-      margin: 15px 0;
-      border-radius: 5px;
-      border: 1px solid #ccc;
-    }
-
-    button {
-      background: #25D366;
-      color: white;
-      border: none;
-      padding: 12px 20px;
-      font-size: 16px;
-      border-radius: 5px;
-      cursor: pointer;
-    }
-
-    button:hover {
-      background: #128C7E;
-    }
-  </style>
+@keyframes glow {
+  0% { text-shadow: 0 0 10px gold; }
+  50% { text-shadow: 0 0 25px yellow; }
+  100% { text-shadow: 0 0 10px gold; }
+}
+</style>
 </head>
 
 <body>
 
-  <!-- Card content -->
-  <div class="card">
-    <h1>🎆 Happy New Year 🎆</h1>
-    <p>Andika jina lako hapa 👇</p>
+<h1>🎉 HAPPY NEW YEAR 🎉</h1>
+<h2>💖 MACHAGE FAMILY 💖</h2>
+<p>May this year bring joy, peace & blessings to our family 🙏✨</p>
 
-    <input type="text" id="username" placeholder="Jina lako">
-    <br><br>
-    <a id="whatsappBtn" href="#" target="_blank">
-      <button onclick="share()">Share WhatsApp</button>
-    </a>
-  </div>
-
-  <!-- Music auto-play -->
-  <audio autoplay loop>
-    <source src="music.mp3" type="audio/mpeg">
-  </audio>
-
-  <!-- Inline JavaScript -->
-  <script>
-    function share() {
-      let name = document.getElementById("username").value.trim();
-      if (name === "") {
-        alert("Andika jina kwanza 😊");
-        return;
-      }
-
-      let msg = "🎉 Happy New Year " + name + "! 🎆\nNimekutumia salamu maalum ✨";
-      let url = "https://wa.me/?text=" + encodeURIComponent(msg);
-
-      // Update link and open
-      document.getElementById("whatsappBtn").href = url;
-      document.getElementById("whatsappBtn").click();
-    }
-  </script>
+<audio autoplay loop>
+  <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-2.mp3" type="audio/mpeg">
+</audio>
 
 </body>
 </html>
