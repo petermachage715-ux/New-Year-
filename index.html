@@ -1,72 +1,98 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<meta charset="UTF-8">
-<title>Happy New Year</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>🎉 Happy New Year 🎉</title>
 
-<style>
-body {
-  background: linear-gradient(to right, #ff512f, #dd2476);
-  font-family: Arial, sans-serif;
-  text-align: center;
-  height: 100vh;
-  margin: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
+  <!-- Inline CSS -->
+  <style>
+    body {
+      background: linear-gradient(to right, #ff512f, #dd2476);
+      font-family: Arial, sans-serif;
+      text-align: center;
+      height: 100vh;
+      margin: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
 
-.card {
-  background: white;
-  padding: 30px;
-  border-radius: 15px;
-  width: 90%;
-  max-width: 400px;
-}
+    .card {
+      background: white;
+      padding: 30px;
+      border-radius: 15px;
+      width: 90%;
+      max-width: 400px;
+      box-shadow: 0 0 20px rgba(0,0,0,0.3);
+      animation: pop 1s ease;
+    }
 
-input {
-  width: 90%;
-  padding: 10px;
-  margin: 15px 0;
-  border-radius: 5px;
-  border: 1px solid #ccc;
-}
+    @keyframes pop {
+      from { transform: scale(0.5); opacity: 0; }
+      to { transform: scale(1); opacity: 1; }
+    }
 
-button {
-  background: #25D366;
-  color: white;
-  border: none;
-  padding: 12px;
-  font-size: 16px;
-  border-radius: 5px;
-}
-</style>
+    input {
+      width: 90%;
+      padding: 10px;
+      margin: 15px 0;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+
+    button {
+      background: #25D366;
+      color: white;
+      border: none;
+      padding: 12px 20px;
+      font-size: 16px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background: #128C7E;
+    }
+  </style>
 </head>
 
 <body>
 
-<div class="card">
-  <h1>🎉 Happy New Year 🎉</h1>
-  <p>Andika jina lako hapa 👇</p>
+  <!-- Card content -->
+  <div class="card">
+    <h1>🎆 Happy New Year 🎆</h1>
+    <p>Andika jina lako hapa 👇</p>
 
-  <input type="text" id="username" placeholder="Jina lako">
-  <br>
-  <button onclick="share()">Share WhatsApp</button>
-</div>
+    <input type="text" id="username" placeholder="Jina lako">
+    <br><br>
+    <a id="whatsappBtn" href="#" target="_blank">
+      <button onclick="share()">Share WhatsApp</button>
+    </a>
+  </div>
 
-<script>
-function share() {
-  let name = document.getElementById("username").value;
-  if (name === "") {
-    alert("Andika jina kwanza 😊");
-    return;
-  }
+  <!-- Music auto-play -->
+  <audio autoplay loop>
+    <source src="music.mp3" type="audio/mpeg">
+  </audio>
 
-  let msg = "🎉 Happy New Year " + name + "! 🎆";
-  let url = "https://wa.me/?text=" + encodeURIComponent(msg);
-  window.open(url, "_blank");
-}
-</script>
+  <!-- Inline JavaScript -->
+  <script>
+    function share() {
+      let name = document.getElementById("username").value.trim();
+      if (name === "") {
+        alert("Andika jina kwanza 😊");
+        return;
+      }
+
+      let msg = "🎉 Happy New Year " + name + "! 🎆\nNimekutumia salamu maalum ✨";
+      let url = "https://wa.me/?text=" + encodeURIComponent(msg);
+
+      // Update link and open
+      document.getElementById("whatsappBtn").href = url;
+      document.getElementById("whatsappBtn").click();
+    }
+  </script>
 
 </body>
 </html>
